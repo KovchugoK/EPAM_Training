@@ -2,7 +2,7 @@ package pac;
 
 public class Task02 {
     public static void main(String[] args) {
-        System.out.println(GeneralTasks.sequence(12345));
+        System.out.println(GeneralTasks.sequence(1232));
         GeneralTasks.calcaGeometric(1212);
         GeneralTasks.calcArifmetic(1234);
         GeneralTasks.reversNumber(123456);

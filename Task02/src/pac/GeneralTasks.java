@@ -1,11 +1,11 @@
 package pac;
 
 class GeneralTasks {
-    private final static int TEN = 10;
+    private final static int DIVIDOR = 10;
 
     //task1
     public static boolean theSame(int a, int b, int c) {
-        return (a == b) && (b == c);
+        return a == b && b == c;
     }
 
     //task2
@@ -33,79 +33,79 @@ class GeneralTasks {
 
     //task5
     public static double calcaGeometric(int a) {
-        double mul = a % TEN;
-        a /= TEN;
-        mul *= a % TEN;
-        a /= TEN;
-        mul *= a % TEN;
-        a /= TEN;
-        mul *= a % TEN;
-        a /= TEN;
-        mul *= a % TEN;
-        a /= TEN;
-        mul *= a % TEN;
+        double mul = a % DIVIDOR;
+        a /= DIVIDOR;
+        mul *= a % DIVIDOR;
+        a /= DIVIDOR;
+        mul *= a % DIVIDOR;
+        a /= DIVIDOR;
+        mul *= a % DIVIDOR;
+        a /= DIVIDOR;
+        mul *= a % DIVIDOR;
+        a /= DIVIDOR;
+        mul *= a % DIVIDOR;
       return Math.sqrt(mul);
     }
     public static double calcArifmetic(int a) {
-        double sum = a % TEN;
-        a /= TEN;
-        sum += a % TEN;
-        a /= TEN;
-        sum += a % TEN;
-        a /= TEN;
-        sum += a % TEN;
-        a /= TEN;
-        sum += a % TEN;
-        a /= TEN;
-        sum += a % TEN;
+        double sum = a % DIVIDOR;
+        a /= DIVIDOR;
+        sum += a % DIVIDOR;
+        a /= DIVIDOR;
+        sum += a % DIVIDOR;
+        a /= DIVIDOR;
+        sum += a % DIVIDOR;
+        a /= DIVIDOR;
+        sum += a % DIVIDOR;
+        a /= DIVIDOR;
+        sum += a % DIVIDOR;
         sum /= 6;
         return sum;
     }
 
     //task4
     public static boolean sequence(int number) {
-        int first = number % TEN;
-        number /= TEN;
-        int second = number % TEN;
-        number /= TEN;
-        int third = number % TEN;
-        number /= TEN;
+        int first = number % DIVIDOR;
+        number /= DIVIDOR;
+        int second = number % DIVIDOR;
+        number /= DIVIDOR;
+        int third = number % DIVIDOR;
+        number /= DIVIDOR;
         int fourth = number;
-        if (first < second) {
+       /* if (first < second) {
             return false;
         } else if (second < third) {
             return false;
         } else if (third < fourth) {
             return false;
-        }
-
-        return true;
+        }*/
+    return first < second && second < third && third < fourth;
+        //return true;
     }
 
 
     //task6
     public static int reversNumber(int a) {
-        int num = a % TEN;
-        a /= TEN;
+        int num = a % DIVIDOR;
+        a /= DIVIDOR;
         int res = num;
-        num = a % TEN;
-        a /= TEN;
-        res = res * TEN + num;
-        num = a % TEN;
-        a /= TEN;
-        res = res * TEN + num;
-        num = a % TEN;
-        a /= TEN;
-        res = res * TEN + num;
-        num = a % TEN;
-        a /= TEN;
-        res = res * TEN + num;
-        num = a % TEN;
-        a /= TEN;
-        res = res * TEN + num;
-        num = a % TEN;
-        a /= TEN;
-        res = res * TEN + num;
+        num = a % DIVIDOR;
+        a /= DIVIDOR;
+        res = res * DIVIDOR + num;
+        num = a % DIVIDOR;
+        a /= DIVIDOR;
+        res = res * DIVIDOR + num;
+        num = a % DIVIDOR;
+        a /= DIVIDOR;
+        res = res * DIVIDOR + num;
+        num = a % DIVIDOR;
+        a /= DIVIDOR;
+        res = res * DIVIDOR + num;
+        num = a % DIVIDOR;
+        a /= DIVIDOR;
+        res = res * DIVIDOR + num;
+        num = a % DIVIDOR;
+        a /= DIVIDOR;
+        res = res * DIVIDOR + num;
       return res;
     }
 
