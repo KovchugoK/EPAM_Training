@@ -43,7 +43,7 @@ public class Triangle {
             if (side3 > side2) {
                 hypotenuse = side3;
                 catheter1 = side1;
-                catheter2 = side3;
+                catheter2 = side2;
             } else {
                 hypotenuse = side2;
                 catheter1 = side1;
