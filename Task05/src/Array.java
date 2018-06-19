@@ -20,7 +20,8 @@ public class Array {
     }
 
     public static void reverse(int[] array) {
-        for (int i = 0; i < array.length / 2; i++) {
+        int size = array.length / 2;
+        for (int i = 0; i < size; i++) {
             int temp = array[i];
             array[i] = array[array.length - i - 1];
             array[array.length - i - 1] = temp;
@@ -49,7 +50,8 @@ public class Array {
     }
 
     public static boolean sequenceHigh(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
+        int size = array.length - 1;
+        for (int i = 0; i < size; i++) {
             if (array[i] > array[i + 1])
                 return false;
         }
@@ -57,7 +59,8 @@ public class Array {
     }
 
     public static boolean sequenceLow(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
+        int size = array.length - 1;
+        for (int i = 0; i < size; i++) {
             if (array[i] < array[i + 1])
                 return false;
         }
@@ -65,7 +68,8 @@ public class Array {
     }
 
     public static int localMax(int[] array) {
-        for (int i = 1; i < array.length - 2; i++) {
+        int size = array.length - 2;
+        for (int i = 1; i < size; i++) {
             if (array[i] > array[i + 1] && array[i] > array[i-1])
                 return i + 1;
         }
@@ -73,7 +77,8 @@ public class Array {
     }
 
     public static int localMin(int[] array) {
-        for (int i = 1; i < array.length - 2; i++) {
+        int size = array.length - 2;
+        for (int i = 1; i < size; i++) {
             if (array[i] < array[i + 1] && array[i] < array[i-1])
                 return i + 1;
         }
