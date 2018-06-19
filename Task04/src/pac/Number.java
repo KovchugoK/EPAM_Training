@@ -28,7 +28,8 @@ public class Number {
     }
 
     public static boolean isSimple(int number) {
-        for (int i = 2; i <= (int) Math.sqrt(number); i++) {
+        int size = (int) Math.sqrt(number);
+        for (int i = 2; i <= size; i++) {
             if (number % i == 0)
                 return false;
         }
@@ -36,17 +37,18 @@ public class Number {
     }
 
     public static String simpleDividers(int number) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         if (isSimple(number)) {
             return 1 + " " + number;
         } else {
-            for (int i = 1; i <= (int) Math.sqrt(number); i++) {
+            int size = (int) Math.sqrt(number);
+            for (int i = 1; i <= size; i++) {
                 if (isSimple(i) && number % i == 0) {
-                    res += i + " ";
+                    res.append( i + " ");
                 }
             }
         }
-        return res;
+        return res.toString();
     }
 
     public static int countOfDifferentNumber(int number) {
@@ -144,7 +146,8 @@ public class Number {
 
     public static boolean isPerfect(int number) {
         int res = 0;
-        for (int i = 1; i < number; i++) {
+        int size = number;
+        for (int i = 1; i < size; i++) {
             if (number % i == 0) {
                 res += i;
             }
