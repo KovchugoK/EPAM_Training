@@ -24,4 +24,14 @@ public class Recursion {
         }
         return equalsOfNumberAndSum(n / 10, s - (n % 10));
     }
+
+    public static int fibonachi(int n) {
+        if(n<2){
+            if(n<0){
+                return -1;
+            }
+            return n;
+        }
+        return fibonachi(n-1)+fibonachi(n-2);
+    }
 }
