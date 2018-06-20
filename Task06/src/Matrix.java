@@ -1,5 +1,5 @@
 public class Matrix {
-    
+
     private static void validator(int[][] matrix){
         int len = matrix[0].length;
         if(matrix == null) {
@@ -12,6 +12,7 @@ public class Matrix {
     }
 
     public static int maxElem(int[][] matrix) {
+        validator(matrix);
         int max = matrix[0][0];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -46,46 +47,56 @@ public class Matrix {
         return res;
     }
 
-    public static int averegeGeometric(int[][] matrix) {
+    public static double averegeGeometric(int[][] matrix) {
         validator(matrix);
-        int res = 0;
+        double res = 0;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 res *= matrix[i][j];
             }
         }
-        res = (int) Math.pow(res, 1 / (matrix.length * matrix[0].length));
+        res = Math.pow(res, 1 / (matrix.length * matrix[0].length));
         return res;
     }
 
-    public static int[][] transposeMatrix(int[][] matrix) {
+    public static void transposesquareMatrix(int[][] matrix) {
         validator(matrix);
         if (matrix[0].length == matrix.length) {
-            int[][] temp = new int[matrix[0].length][matrix.length];
-            for (int i = 0; i < matrix.length; i++)
-                for (int j = 0; j < matrix[0].length; j++)
-                    temp[j][i] = matrix[i][j];
-            return temp;
-        } else {
             for (int i = 0; i < matrix.length; i++)
                 for (int j = i; j < matrix[0].length; j++) {
                     int temp = matrix[i][j];
                     matrix[i][j] = matrix[j][i];
                     matrix[j][i] = temp;
                 }
-            return matrix;
         }
     }
-    
+
+    public static int[][] transposeMatrix(int[][] matrix) throws Exception {
+        validator(matrix);
+        int[][] temp = new int[matrix[0].length][matrix.length];
+        if (matrix[0].length != matrix.length) {
+            for (int i = 0; i < matrix.length; i++)
+                for (int j = 0; j < matrix[0].length; j++)
+                    temp[j][i] = matrix[i][j];
+
+        }
+        else{
+            throw new ArrayIndexOutOfBoundsException("Use another method");
+        }
+        return temp;
+    }
+
     public static String positionOfLocalMinimum(int[][] matrix) {
         validator(matrix);
+        String s = "no local min";
         for (int i = 1; i < matrix.length - 1; i++) {
             for (int j = 1; j < matrix[i].length - 2; j++) {
                 if (matrix[i][j] < matrix[i][j + 1] && matrix[i][j] < matrix[i + 1][j] && matrix[i][j] < matrix[i - 1][j] && matrix[i][j] < matrix[i][j - 1]) {
-                    return "row: " + Integer.toString(i + 1) + " columns: " + Integer.toString(j + 1);
+                    s = "row: " + Integer.toString(i + 1) + " columns: " + Integer.toString(j + 1);
+                    break;
                 }
             }
         }
-        return "-1";
+        return s;
     }
 }
