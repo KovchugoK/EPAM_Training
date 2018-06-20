@@ -1,5 +1,6 @@
 public class Array {
     public static int maxInArray(int[] array) {
+        validator(array);
         int max = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
@@ -10,6 +11,7 @@ public class Array {
     }
 
     public static int minInArray(int[] array) {
+        validator(array);
         int min = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] < min) {
@@ -20,6 +22,7 @@ public class Array {
     }
 
     public static void reverse(int[] array) {
+        validator(array);
         int size = array.length / 2;
         for (int i = 0; i < size; i++) {
             int temp = array[i];
@@ -29,6 +32,7 @@ public class Array {
     }
 
     public static int averegeArifmetic(int[] array) {
+        validator(array);
         int res = 0;
         for (int i = 0; i < array.length; i++) {
 
@@ -39,6 +43,7 @@ public class Array {
     }
 
     public static double averegeGeometric(int[] array) {
+        validator(array);
         double res = 1;
         for (int i = 0; i < array.length; i++) {
             if (array[i] <= 0)
@@ -50,40 +55,65 @@ public class Array {
     }
 
     public static boolean sequenceHigh(int[] array) {
+        validator(array);
+        boolean flag = true;
         int size = array.length - 1;
         for (int i = 0; i < size; i++) {
-            if (array[i] > array[i + 1])
-                return false;
+            if (array[i] > array[i + 1]) {
+                flag = false;
+                break;
+            }
+
         }
-        return true;
+        return flag;
     }
 
     public static boolean sequenceLow(int[] array) {
+        validator(array);
+        boolean flag = true;
         int size = array.length - 1;
         for (int i = 0; i < size; i++) {
             if (array[i] < array[i + 1])
-                return false;
+            {
+                flag = false;
+                break;
+            }
         }
-        return true;
+        return flag;
     }
 
     public static int localMax(int[] array) {
+        validator(array);
+        int index = -1;
         int size = array.length - 2;
         for (int i = 1; i < size; i++) {
             if (array[i] > array[i + 1] && array[i] > array[i-1])
-                return i + 1;
+            {
+                index =  i + 1;
+                break;
+            }
+
         }
-        return -1;
+        return index;
     }
 
     public static int localMin(int[] array) {
+        validator(array);
+        int index = -1;
         int size = array.length - 2;
         for (int i = 1; i < size; i++) {
             if (array[i] < array[i + 1] && array[i] < array[i-1])
-                return i + 1;
+            {
+                index = i + 1;
+            }
         }
-        return -1;
+        return index;
     }
 
+    public static void validator(int[] array) {
+        if (array.length <= 0 ) {
+            throw new IndexOutOfBoundsException ("too small size");
+        }
+    }
 
 }
