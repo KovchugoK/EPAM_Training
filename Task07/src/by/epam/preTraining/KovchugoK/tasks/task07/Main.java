@@ -23,7 +23,7 @@ public class Main {
         System.out.println(taxiCabby.toString());
         taxiCabby.deleteCarByIndex(1);
         System.out.println(taxiCabby.toString());
-        
+
 
     }
 }
