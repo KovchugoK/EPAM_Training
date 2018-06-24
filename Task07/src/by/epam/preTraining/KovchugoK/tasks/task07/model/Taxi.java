@@ -52,6 +52,13 @@ public class Taxi {
         return car;
     }
 
+    public int getSizeOfCar(){
+        return car.length;
+    }
+    public Car getCarByIndex(int ind){
+        return car[ind];
+    }
+
     public void setCars(Car[] car) {
         this.car = car;
     }

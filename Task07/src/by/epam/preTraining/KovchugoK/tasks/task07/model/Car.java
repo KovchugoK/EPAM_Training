@@ -39,6 +39,10 @@ public class Car extends Vehicle {
         this.model = model;
     }
 
+    public double getPrice(){
+        return super.getPrice();
+    }
+
     public String getCarModelType() {
         return carModelType;
     }
@@ -74,7 +78,8 @@ public class Car extends Vehicle {
         return "Car{" +
                 "model='" + model + '\'' +
                 ", carModelType='" + carModelType + '\'' +
-                '}';
+                ", price='" + super.getPrice() + '\'' +
+                '}' + '\n';
     }
 }
 
